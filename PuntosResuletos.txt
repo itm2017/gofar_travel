@@ -1,0 +1,9 @@
+/* Integrantes:
+
+Yesika Marcela Montes Rodas
+Yair Arboleda Isaza
+Sebastian Suarez Restrepo
+Juan David Echeverri*
+
+Solución de los puntos 2 al 11 */
+
