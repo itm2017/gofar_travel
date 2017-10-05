@@ -101,3 +101,12 @@ DEFAULT TABLESPACE hospital_bills;
 ALTER USER USER4 PROFILE FINANCE;
 GRANT CREATE SESSION TO USER4;
 
+---------8---------------------------------
+8. Lock the users associate with profiles: manager and finance.
+
+ALTER USER USER1 ACCOUNT LOCK;
+ALTER USER USER2 ACCOUNT LOCK;
+ALTER USER USER4 ACCOUNT LOCK;
+
+--------9-----------------------------------
+9. Delete the tablespace called "test_purposes "
