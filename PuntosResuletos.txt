@@ -7,6 +7,37 @@ Juan David Echeverri*
 
 Solución de los puntos 2 al 11 */
 
+
+----PUNTO-----2---------------------
+/*2. Create 3 Tablespaces (0.2) :
+a. first one with 1 Gb and 3 datafiles, tablespace should be named "hospital_bills"
+b. second one with 500 Mb and 1 datafile, named "test_purposes".
+c. Undo tablespace with 5Mb of space and 1 datafile*/
+
+--a--
+CREATE TABLESPACE hospital_bills
+DATAFILE 
+'C:\oraclexe\app\oracle\oradata\XE\hospital_bills1.dbf' size 333M,
+'C:\oraclexe\app\oracle\oradata\XE\hospital_bills2.dbf' size 333M,
+'C:\oraclexe\app\oracle\oradata\XE\hospital_bills3.dbf' size 333M;
+
+--b--
+CREATE TABLESPACE test_purposes
+DATAFILE 'C:\oraclexe\app\oracle\oradata\XE\test_purposes1.dbf' size 250M,
+'C:\oraclexe\app\oracle\oradata\XE\test_purposes2.dbf' size 250M;
+
+--c--
+CREATE UNDO TABLESPACE TEST_UNDO
+DATAFILE 
+'C:\oraclexe\app\oracle\oradata\XE\TEST_UNDO.dbf' size 5M;
+
+
+----PUNTO-----3---------------------
+--3. Set the undo tablespace to be used in the system
+
+ALTER SYSTEM SET UNDO_TABLESPACE = TEST_UNDO;
+
+
 ----PUNTO-----6---------------------
 /*6. Create 3 profiles. (0.2)
 a. Profile 1: "manager " password life 40 days, one session per user, 15 minutes idle, 4 failed login attempts
