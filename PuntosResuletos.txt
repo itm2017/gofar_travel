@@ -49,9 +49,7 @@ QUOTA UNLIMITED ON hospital_bills;
 --------5----------------------
 5. Assign the dba role and permissions to connect to the user just created
 
-CREATE ROLE DBA_ROLE;
 GRANT DBA_ROLE TO DBA_USER;
-GRANT CREATE SESSION TO DBA_USER;
 
 ----PUNTO-----6---------------------
 /*6. Create 3 profiles. (0.2)
