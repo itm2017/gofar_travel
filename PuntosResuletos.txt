@@ -37,6 +37,21 @@ DATAFILE
 
 ALTER SYSTEM SET UNDO_TABLESPACE = TEST_UNDO;
 
+---------4---------------------
+4. Create a DBA user and assign it to the tablespace called "hospital_bills", this user has unlimited space
+on the tablespace
+
+CREATE USER DBA_USER
+IDENTIFIED bY "12345"
+DEFAULT TABLESPACE hospital_bills
+QUOTA UNLIMITED ON hospital_bills;
+
+--------5----------------------
+5. Assign the dba role and permissions to connect to the user just created
+
+CREATE ROLE DBA_ROLE;
+GRANT DBA_ROLE TO DBA_USER;
+GRANT CREATE SESSION TO DBA_USER;
 
 ----PUNTO-----6---------------------
 /*6. Create 3 profiles. (0.2)
