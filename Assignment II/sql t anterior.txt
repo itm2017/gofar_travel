@@ -1,5 +1,5 @@
 CREATE TABLE Patient (ID_Patient INTEGER PRIMARY KEY, Patient_Name VARCHAR(50),
-                      Patien_Address VARCHAR(50),Patient_City VARCHAR(50), 
+                      Patient_Address VARCHAR(50),Patient_City VARCHAR(50), 
                       Patient_State VARCHAR(50), Patient_ZIP INTEGER );
 
 
@@ -29,17 +29,17 @@ create sequence seq_id_Patient_Bill start with 3500 increment by 10;
 create sequence seq_id_Patient_Bill_Detail start with 350 increment by 1;
 
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Andres Felipe Spitaleta','177-2721 Diam. Street','Tiruppur','Tamil Nadu','413574');
-INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Adriana Milena Cuervo','853-8710 Metus Rd','La Coruña','Barcelona','44431');
+INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Adriana Milena Cuervo','853-8710 Metus Rd','La CoruÃ±a','Barcelona','44431');
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Juan David Carrasquilla','Ap #479-531 Suspendisse Street','Mysore','Karnataka','37956');
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Stella Cadavid Loaiza','7678 Hendrerit Avenue','Siegendorf','Cindrof','39210');
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Santiago Smith Martinez','3211 Pellentesque Rd','Offenburg','Ortenau','02526');
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Emily Sophia Williams','689-2762 Lorem, Avenue','Minucciano','Toscana','961100');
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Jacob Ethan Patrelly','165-5189 Elit, Avenue','Fallais','Bruselas','03270');
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Madison Madelyn Taylor','129-3144 Curabitur St','San Bernardo','Sevilla','83298895');
-INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Owen Hunter Thompson','9805 Erat. St','Gölcük','Kocaeli','789748');
+INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Owen Hunter Thompson','9805 Erat. St','GÃ¶lcÃ¼k','Kocaeli','789748');
 INSERT INTO PATIENT VALUES (seq_id_patient.NEXTVAL,'Victoria Kennedy Standford','119-3088 Gravida Road','Upper Hutt','Wellington','58857760');
 
-INSERT INTO COST_CENTER VALUES (seq_id_cost.NEXTVAL,'Room & board');
+INSERT INTO COST_CENTER VALUES (seq_id_cost.NEXTVAL,'Room and board');
 INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'Semi-Pv Room','200,00',seq_id_cost.CURRVAL);
 INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'Television','15,00',seq_id_cost.CURRVAL);
 INSERT INTO COST_CENTER VALUES (seq_id_cost.NEXTVAL,'Laboratory');
@@ -57,8 +57,8 @@ INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'Pv Room','350,00',seq_id_cost.CURR
 INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'permanent companion','150,00',seq_id_cost.CURRVAL);
 INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'ambulance','450,00',seq_id_cost.CURRVAL);
 
-/*INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'Phone','45,00',seq_id_cost.CURRVAL);
-INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'Share Room','100,00',seq_id_cost.CURRVAL);*/
+INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'Phone','45,00',100);
+INSERT INTO ITEM VALUES (seq_id_item.NEXTVAL,'Share Room','100,00',100);
 
 INSERT INTO Patient_Bill VALUES (seq_id_Patient_Bill.NEXTVAL,100000,TO_DATE('11/10/2017','DD/MM/YYYY'),TO_DATE('26/09/2017','DD/MM/YYYY'),TO_DATE('11/10/2017','DD/MM/YYYY'),250);
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3500,1500,TO_DATE('27/09/2017','DD/MM/YYYY'),200);
@@ -67,9 +67,11 @@ INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3500,
 INSERT INTO Patient_Bill VALUES (seq_id_Patient_Bill.NEXTVAL,100001,TO_DATE('29/09/2017','DD/MM/YYYY'),TO_DATE('28/09/2017','DD/MM/YYYY'),TO_DATE('29/09/2017','DD/MM/YYYY'),34);
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3510,1510,TO_DATE('28/09/2017','DD/MM/YYYY'),25);
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3510,1540,TO_DATE('28/09/2017','DD/MM/YYYY'),9);
-INSERT INTO Patient_Bill VALUES (seq_id_Patient_Bill.NEXTVAL,100002,TO_DATE('15/10/2017','DD/MM/YYYY'),TO_DATE('30/09/2017','DD/MM/YYYY'),TO_DATE('15/10/2017','DD/MM/YYYY'),270);
-INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3510,1500,TO_DATE('2/10/2017','DD/MM/YYYY'),200);
+INSERT INTO Patient_Bill VALUES (seq_id_Patient_Bill.NEXTVAL,100002,TO_DATE('15/10/2017','DD/MM/YYYY'),TO_DATE('30/09/2017','DD/MM/YYYY'),TO_DATE('15/10/2017','DD/MM/YYYY'),415);
+INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3520,1500,TO_DATE('2/10/2017','DD/MM/YYYY'),200);
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3520,1505,TO_DATE('6/10/2017','DD/MM/YYYY'),15);
+INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3520,1560,TO_DATE('7/10/2017','DD/MM/YYYY'),45);
+INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3520,1565,TO_DATE('9/10/2017','DD/MM/YYYY'),100);
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3520,1520,TO_DATE('10/10/2017','DD/MM/YYYY'),30);
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3520,1525,TO_DATE('14/10/2017','DD/MM/YYYY'),25);
 INSERT INTO Patient_Bill VALUES (seq_id_Patient_Bill.NEXTVAL,100003,TO_DATE('17/10/2017','DD/MM/YYYY'),TO_DATE('2/10/2017','DD/MM/YYYY'),TO_DATE('17/10/2017','DD/MM/YYYY'),550);
@@ -91,4 +93,5 @@ INSERT INTO Patient_Bill VALUES (seq_id_Patient_Bill.NEXTVAL,100008,TO_DATE('13/
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3580,1530,TO_DATE('13/10/2017','DD/MM/YYYY'),7);
 INSERT INTO Patient_Bill VALUES (seq_id_Patient_Bill.NEXTVAL,100009,TO_DATE('15/10/2017','DD/MM/YYYY'),TO_DATE('14/10/2017','DD/MM/YYYY'),TO_DATE('15/10/2017','DD/MM/YYYY'),200);
 INSERT INTO Patient_Bill_Detail VALUES (seq_id_Patient_Bill_Detail.NEXTVAL,3590,1500,TO_DATE('15/10/2017','DD/MM/YYYY'),200);
+
 
